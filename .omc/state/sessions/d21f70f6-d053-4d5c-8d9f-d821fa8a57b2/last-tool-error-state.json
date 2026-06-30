@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"docker exec -e BOOK_LIBRARY_URL=http://localhost:8080 book-library bundle exec cucumber features/ 2>&1\",\"timeout\":60000,\"description\":\"Run cucumber tests inside container\"}",
+  "error": "Exit code 2\nNo such file or directory - features. You can use `cucumber --init` to get started.",
+  "timestamp": "2026-06-26T01:06:25.690Z",
+  "retry_count": 1
+}

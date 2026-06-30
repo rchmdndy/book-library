@@ -1,0 +1,27 @@
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    restart: unless-stopped
+    ports:
+      - "8081:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+      - ./:/var/jenkins_home/workspace/book-library-pipeline
+    group_add:
+      - "985"
+    environment:
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=true
+
+  book-library:
+    build: .
+    container_name: book-library
+    ports:
+      - "8765:8080"
+    restart: unless-stopped
+
+volumes:
+  jenkins_home:
