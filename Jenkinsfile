@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    triggers {
+        githubPush()
+    }
+
     environment {
         DOCKER_IMAGE = 'rachmadandy/book-library'
         DOCKER_TAG = 'latest'
