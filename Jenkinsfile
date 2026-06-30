@@ -50,8 +50,6 @@ pipeline {
         always {
             sh "docker stop book-library-test || true"
             sh "docker rm book-library-test || true"
-            sh "docker stop book-library || true"
-            sh "docker rm book-library || true"
         }
         success {
             echo 'Pipeline PASSED - Book Library siap deploy!'
