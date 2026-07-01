@@ -8,9 +8,10 @@ set :bind, '0.0.0.0'
 books = {}
 
 # POST /books - Add a new book
-# testing lagi
+# testing lagi testgin lagi
 post '/books' do
   content_type :json
+
 
   begin
     body = JSON.parse(request.body.read)
